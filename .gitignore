@@ -1,0 +1,81 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+/.next/
+/build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage directory
+/coverage/
+
+# Misc
+*.log
+*.pid
+*.seed
+*.gz
+
+# Monorepo-specific (if using tools like Lerna or Nx)
+lerna-debug.log
+*.lock
+.pnpm-lock.yaml
+.npmrc
+
+# NestJS specific
+nestjs-*.log
+
+# Next.js specific
+.next/
+out/
+
+# Build artifacts
+*.tgz
+
+# TypeScript
+*.tsbuildinfo
+
+# Yarn v2/3
+/.yarn/cache
+/.yarn/unplugged
+/.yarn/build-state.yml
+/.yarn/patches
+/.yarn/releases
+/.yarn/plugins
+
+# MacOS
+*.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
