@@ -23,9 +23,9 @@ export default function Home() {
       </Banner>
       <Container>
         <ContentTitle>
-          <h2>
+          <h1>
             descubra as fragrâncias que combinam com você
-          </h2>
+          </h1>
         </ContentTitle>
         <Products />
         <Footer>

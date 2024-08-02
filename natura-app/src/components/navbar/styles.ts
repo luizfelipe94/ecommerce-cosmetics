@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Content = styled.div`
@@ -30,7 +31,7 @@ export const Search = styled.div`
   width: 40%;
 `;
 
-export const SettingMenu = styled.div`
+export const SettingMenu = styled(Link)`
   width: 40%;
   display: flex;  
   justify-content: center;
@@ -51,7 +52,7 @@ export const SettingMenu = styled.div`
 export const Settings = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
 `;

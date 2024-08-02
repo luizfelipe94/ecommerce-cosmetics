@@ -4,14 +4,17 @@ import { CircleUser, ShoppingCart } from "lucide-react";
 import SearchInput from "../search-input";
 import Select from "../select";
 import { Banner, Settings, Content, Menu, Search, SettingMenu } from "./styles";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <section>
       <Content>
-        <Banner>
+        <Link href="/">
+          <Banner>
           Cosméticos&Co
-        </Banner>
+          </Banner>
+        </Link>
         <Menu>
           <Select options={[{ label: "Products", value: "products" }]}/>
         </Menu>
@@ -19,10 +22,10 @@ export default function Navbar() {
           <SearchInput placeholder="O que está buscando hoje?"/>
         </Search>
         <Settings>
-          <SettingMenu>
+          <SettingMenu href="/cart">
             <ShoppingCart size={25} strokeWidth={2} />
           </SettingMenu>
-          <SettingMenu>
+          <SettingMenu href="#">
             <CircleUser size={25} strokeWidth={2}/>
           </SettingMenu>
         </Settings>
