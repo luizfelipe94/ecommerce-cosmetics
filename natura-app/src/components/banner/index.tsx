@@ -12,12 +12,12 @@ const Banner = ({ children, image }: BannerProps) => {
   return (
     <BannerWrapper>
       <Image
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
         src={image}
-        alt=""
+        alt="banner"
+        layout="responsive"
+        width={800}
+        height={600}
+        style={{ objectFit: "cover" }} // Ajusta a imagem ao contêiner
       />
       <BannerContent>
         {children}
