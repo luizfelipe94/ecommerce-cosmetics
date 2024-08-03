@@ -39,9 +39,9 @@ export async function listProducts(maxItems = 4): Promise<ReadProductDTO[]> {
       id: "4",
       image: "/assets/perfume1.png",
       title: "Product1",
-      price: 212.20,
-      discountPercentage: 0,
-      rating: 4.5,
+      price: 1000,
+      discountPercentage: 10,
+      rating: 2,
     },
   ];
 }

@@ -1,17 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+"use client";
 
-const StyledBadge = styled.div<{ color?: string; fontSize?: string }>`
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 12px;
-  background-color: ${(props) => props.color || "#f00"};
-  color: #fff; 
-  font-size: ${(props) => props.fontSize || "14px"};
-  font-weight: bold;
-  text-align: center;
-  vertical-align: middle;
-`;
+import React from "react";
+import { StyledBadge } from "./styles";
 
 export type BadgeProps = {
   children: React.ReactNode;

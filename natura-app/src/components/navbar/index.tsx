@@ -2,9 +2,22 @@
 
 import { CircleUser, ShoppingCart } from "lucide-react";
 import SearchInput from "../search-input";
-import Select from "../select";
 import { Banner, Settings, Content, Menu, Search, SettingMenu } from "./styles";
 import Link from "next/link";
+import Dropdown, { SelectOption } from "../dropdown";
+
+const options: SelectOption[] = [
+  {
+    value: "products",
+    label: "Produtos",
+    href: "/catalog?type=products",
+  },
+  {
+    value: "perfumes",
+    label: "Perfumaria",
+    href: "/catalog?type=perfumes",
+  }
+];
 
 export default function Navbar() {
   return (
@@ -16,7 +29,7 @@ export default function Navbar() {
           </Banner>
         </Link>
         <Menu>
-          <Select options={[{ label: "Products", value: "products" }]}/>
+          <Dropdown placeholder="Products" options={options }/>
         </Menu>
         <Search>
           <SearchInput placeholder="O que está buscando hoje?"/>
