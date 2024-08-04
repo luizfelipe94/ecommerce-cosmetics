@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const DropdownContainer = styled.div`
   position: relative;
   display: inline-block;
+  width: 100%;
 `;
 
 export const DropdownButton = styled.button`
@@ -13,7 +14,7 @@ export const DropdownButton = styled.button`
   cursor: pointer;
   border-radius: 4px;
   text-align: left;
-  width: 200px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +42,7 @@ export const DropdownItem = styled.div`
   }
 `;
 
-export const DropdownIcon = styled(IoMdArrowDropdown)<{ open: boolean }>`
+export const DropdownIcon = styled(IoMdArrowDropdown) <{ open: boolean }>`
   margin-left: 8px;
   transition: transform 0.3s ease;
   transform: ${({ open }) => open ? "rotate(180deg)" : "rotate(0deg)"};

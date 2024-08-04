@@ -1,7 +1,8 @@
 "use client";
 
 import { CircleUser, ShoppingCart } from "lucide-react";
-import SearchInput from "../search-input";
+import Input from "../input";
+import { FaSearch } from "react-icons/fa";
 import { Banner, Settings, Content, Menu, Search, SettingMenu } from "./styles";
 import Link from "next/link";
 import Dropdown, { SelectOption } from "../dropdown";
@@ -23,23 +24,23 @@ export default function Navbar() {
   return (
     <section>
       <Content>
-        <Link href="/">
-          <Banner>
-          Cosméticos&Co
-          </Banner>
-        </Link>
+        <Banner>
+          <Link href="/">
+            Cosméticos&Co
+          </Link>
+        </Banner>
         <Menu>
-          <Dropdown placeholder="Products" options={options }/>
+          <Dropdown placeholder="Products" options={options} />
         </Menu>
         <Search>
-          <SearchInput placeholder="O que está buscando hoje?"/>
+          <Input placeholder="O que está buscando hoje?" icon={<FaSearch size={20} />} />
         </Search>
         <Settings>
           <SettingMenu href="/cart">
             <ShoppingCart size={25} strokeWidth={2} />
           </SettingMenu>
           <SettingMenu href="#">
-            <CircleUser size={25} strokeWidth={2}/>
+            <CircleUser size={25} strokeWidth={2} />
           </SettingMenu>
         </Settings>
       </Content>

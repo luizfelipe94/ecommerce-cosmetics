@@ -1,17 +1,11 @@
-import React from "react";
 import styled from "styled-components";
-import { FaSearch } from "react-icons/fa";
 
-interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  placeholder?: string;
-}
-
-const Container = styled.div`
+export const Container = styled.div`
   position: relative;
   width: 100%;
 `;
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   width: 100%;
   padding: 10px 20px;
   padding-left: 40px; /* Espaço para o ícone */
@@ -32,23 +26,10 @@ const StyledInput = styled.input`
   }
 `;
 
-const IconWrapper = styled.div`
+export const IconWrapper = styled.div`
   position: absolute;
   left: 10px; /* Ajuste a posição conforme necessário */
   top: 55%;
   transform: translateY(-50%);
   color: #aaa;
 `;
-
-const SearchInput: React.FC<SearchInputProps> = (props) => {
-  return (
-    <Container>
-      <StyledInput type="search" {...props} />
-      <IconWrapper>
-        <FaSearch size={20} />
-      </IconWrapper>
-    </Container>
-  );
-};
-
-export default SearchInput;
