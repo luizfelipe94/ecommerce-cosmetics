@@ -1,6 +1,6 @@
 import React from "react";
 import { IoMdRemove, IoMdAdd } from "react-icons/io";
-import { Button, Container, NumberDisplay } from "./styles";
+import { Container, LeftButton, NumberDisplay, RightButton } from "./styles";
 
 export type NumberControlProps = {
   value: number;
@@ -14,13 +14,15 @@ export default function NumberControl({ value, setValue }: NumberControlProps) {
 
   return (
     <Container>
-      <Button onClick={decrement}>
+      <LeftButton onClick={decrement}>
         <IoMdRemove />
-      </Button>
-      <NumberDisplay>{value}</NumberDisplay>
-      <Button onClick={increment}>
+      </LeftButton>
+      <NumberDisplay>
+        {value}
+      </NumberDisplay>
+      <RightButton onClick={increment}>
         <IoMdAdd />
-      </Button>
+      </RightButton>
     </Container>
   );
 }
