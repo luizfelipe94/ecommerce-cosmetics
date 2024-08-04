@@ -8,7 +8,7 @@ export default function CartSummary() {
   return (
     <SummaryContainer>
       <div>
-        <h3>Summary</h3>
+        <h3>Sumário</h3>
       </div>
       <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "20px" }}>
         <SummarySection>

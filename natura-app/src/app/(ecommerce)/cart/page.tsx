@@ -21,7 +21,7 @@ export default function Page() {
       breadcrumb={[{ label: "Início" }, { label: "Carrinho" }]}
     >
       <Container>
-        <CartItems items={products}/>
+        <CartItems items={products} />
         <CartSummary />
       </Container>
     </Template>
