@@ -9,3 +9,18 @@ export const SummaryContainer = styled.div`
   flex-direction: column;
   gap: 30px;
 `;
+
+export const SummarySection = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const CouponSection = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+`;
