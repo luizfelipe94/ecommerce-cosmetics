@@ -1,14 +1,12 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import Image from "next/image";
 
-export const ListContainer = styled.div`
-  width: 65%;
-  border-radius: 12px;
-  border: 1px solid #ced4da;
-  padding: 16px;
+export const StyledProductsList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  padding: 20px;
+  gap: 50px;
+  width: 50%;
 `;
 
 export const ItemContainer = styled.div`
@@ -17,10 +15,15 @@ export const ItemContainer = styled.div`
   justify-content: space-between;
 `;
 
+export const ItemContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30%;
+`;
+
 export const ImageWrapper = styled(Image)`
   display: block;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   border-radius: 12px;
 `;

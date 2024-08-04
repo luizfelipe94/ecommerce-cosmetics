@@ -1,29 +1,16 @@
 "use client";
 
 import { ReadProductDTO } from "@/service/products-service";
-import styled from "styled-components";
-import Image from "next/image";
+
 import { RiDeleteBin6Line } from "react-icons/ri";
 import NumberControl from "@/components/number-control";
 import { useState } from "react";
+import { ItemContainer } from "../styles";
+import { ImageWrapper } from "./styles";
 
 export type CartItemProps = {
   item: ReadProductDTO;
 }
-
-export const ItemContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-export const ImageWrapper = styled(Image)`
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-`;
 
 export default function CartItem({ item }: CartItemProps) {
 

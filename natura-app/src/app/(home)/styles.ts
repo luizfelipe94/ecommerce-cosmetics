@@ -16,7 +16,7 @@ export const ContentTitle = styled.div`
   padding: 30px;
 `;
 
-export const ProductsList = styled.div`
+export const StyledProductsList = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: 100%;

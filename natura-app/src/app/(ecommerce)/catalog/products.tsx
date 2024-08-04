@@ -1,10 +1,11 @@
-import Product from "@/components/product";
-import { listProducts, ReadProductDTO } from "@/service/products-service";
-import { useEffect, useState } from "react";
+"use client";
+
+import { ReadProductDTO, listProducts } from "@/service/products-service";
+import { useState, useEffect } from "react";
 import { StyledProductsList } from "./styles";
+import CatalogItem from "./catalog-item";
 
 export default function Products() {
-
   const [products, setProducts] = useState<ReadProductDTO[]>([]);
 
   useEffect(() => {
@@ -14,9 +15,10 @@ export default function Products() {
 
   return (
     <StyledProductsList>
-      {products.map((product) => (
-        <Product key={product.id} product={product} />
+      {products.map((item) => (
+        <CatalogItem key={item.id} item={item} />
       ))}
     </StyledProductsList>
   );
+
 }
