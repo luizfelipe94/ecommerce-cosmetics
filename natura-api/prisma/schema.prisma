@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id           String        @id @default(uuid())
+  name         String
+  slug         String
+  image        String?
+  rating       Float
+  price        Decimal       @db.Decimal(10, 2)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  deletedAt    DateTime?
+  cartProducts CartProduct[]
+
+  @@map("products")
+}
+
+model Cart {
+  id        String        @id @default(uuid())
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  deletedAt DateTime?
+  products  CartProduct[]
+  couponId  String?
+  coupon    Coupon?       @relation(fields: [couponId], references: [id])
+
+  @@map("carts")
+}
+
+model CartProduct {
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  cartId    String
+  cart      Cart      @relation(fields: [cartId], references: [id])
+  productId String
+  product   Product   @relation(fields: [productId], references: [id])
+  quantity  Int
+
+  @@map("carts_products")
+}
+
+model Coupon {
+  id         String    @id @default(uuid())
+  code       String
+  expireAt   DateTime
+  percentage Decimal   @db.Decimal(5, 2)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+  carts      Cart[]
+
+  @@map("coupons")
+}
