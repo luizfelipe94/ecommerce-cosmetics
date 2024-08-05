@@ -26,4 +26,6 @@ export const ImageWrapper = styled(Image)`
   display: block;
   object-fit: cover;
   border-radius: 12px;
+  width: 150px;
+  height: 150px;
 `;

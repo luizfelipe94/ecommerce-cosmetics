@@ -17,12 +17,10 @@ export const ContentTitle = styled.div`
 `;
 
 export const StyledProductsList = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  padding: 30px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 50px;
 `;
 
-export const Footer = styled.div`
-  
-`;
+export const Footer = styled.div``;

@@ -1,5 +1,6 @@
-import { ReadProductDTO } from "@/service/products-service";
+
 import { StyledProduct, ImageWrapper, ProcutTitle, RatingLabel, ProductRating, PriceContent, PriceLabel, DiscountContent, DiscountLabel } from "./styles";
+import { ReadProductDTO } from "@/service/types";
 import Stars from "../stars";
 import Badge from "../badge";
 
@@ -8,7 +9,7 @@ export type ProductProps = {
 };
 
 function calculatePrice(price: number, discount: number): number {
-  return price - (price * (discount / 100));
+  return discount ? price - (price * (discount / 100)) : price;
 }
 
 export default function Product({ product }: ProductProps) {
@@ -17,10 +18,10 @@ export default function Product({ product }: ProductProps) {
       <ImageWrapper
         width={150}
         height={150}
-        src={product.image}
+        src={`/assets/${product.image}`}
         alt="product"
       />
-      <ProcutTitle>{product.title}</ProcutTitle>
+      <ProcutTitle>{product.name}</ProcutTitle>
       <ProductRating>
         <div>
           <Stars rating={product.rating} />
@@ -30,12 +31,12 @@ export default function Product({ product }: ProductProps) {
         </div>
       </ProductRating>
       <PriceContent>
-        <PriceLabel>R$ {calculatePrice(product.price, product.discountPercentage)}</PriceLabel>
-        {product.discountPercentage > 0 && (
+        <PriceLabel>R$ {calculatePrice(product.price, product.discountPercentege).toFixed(2)}</PriceLabel>
+        {product.discountPercentege > 0 && (
           <DiscountContent>
             <DiscountLabel>R$ {product.price}</DiscountLabel>
             <div>
-              <Badge color="#f1a08f">{product.discountPercentage}%</Badge>
+              <Badge color="#f1a08f">{product.discountPercentege}%</Badge>
             </div>
           </DiscountContent>
         )}

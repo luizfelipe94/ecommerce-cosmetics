@@ -1,4 +1,4 @@
-import { ReadProductDTO } from "@/service/products-service";
+import { ReadProductDTO } from "@/service/types";
 import { ImageWrapper, ItemContainer, ItemContent } from "./styles";
 import Button from "@/components/button";
 
@@ -13,11 +13,11 @@ export default function CatalogItem({ item }: CatalogItemProps) {
         <ImageWrapper
           width={150}
           height={150}
-          src={item.image}
+          src={`/assets/${item.image}`}
           alt="product"
         />
         <ItemContent>
-          <div><h3>{item.title}</h3></div>
+          <div><h3>{item.name}</h3></div>
           <div><h3>R$ {item.price}</h3></div>
           <Button bgColor="orange" textColor="white">Adicionar</Button>
         </ItemContent>

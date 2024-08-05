@@ -1,0 +1,2 @@
+## list products
+GET http://localhost:3005/products

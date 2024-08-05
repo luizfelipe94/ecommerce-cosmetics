@@ -8,16 +8,17 @@ datasource db {
 }
 
 model Product {
-  id           String        @id @default(uuid())
-  name         String
-  slug         String
-  image        String?
-  rating       Float
-  price        Decimal       @db.Decimal(10, 2)
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
-  deletedAt    DateTime?
-  cartProducts CartProduct[]
+  id                 String        @id @default(uuid())
+  name               String
+  slug               String
+  image              String?
+  rating             Float
+  price              Decimal       @db.Decimal(10, 2)
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  deletedAt          DateTime?
+  cartProducts       CartProduct[]
+  discountPercentege Float?
 
   @@map("products")
 }

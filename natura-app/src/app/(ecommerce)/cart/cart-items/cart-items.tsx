@@ -1,10 +1,10 @@
 "use client";
 
-import { ReadProductDTO } from "@/service/products-service";
 import { ListContainer } from "./styles";
 import CartItem from "./cart-item";
 import { Fragment } from "react";
 import { DividerContainer } from "@/components/divider/styles";
+import { ReadProductDTO } from "@/service/types";
 
 export type CartItemProps = {
   items: ReadProductDTO[];

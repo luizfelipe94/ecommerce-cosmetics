@@ -1,20 +1,18 @@
+"use client";
+
 import Product from "@/components/product";
-import { listProducts, ReadProductDTO } from "@/service/products-service";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { StyledProductsList } from "./styles";
+import { useProducts } from "@/hooks/useProducts";
 
 export default function Products() {
 
-  const [products, setProducts] = useState<ReadProductDTO[]>([]);
-
-  useEffect(() => {
-    listProducts()
-      .then((products) => setProducts(products));
-  }, []);
+  const [page, setPage] = useState(1);
+  const { data: products } = useProducts(page);
 
   return (
     <StyledProductsList>
-      {products.map((product) => (
+      {products?.data.map((product) => (
         <Product key={product.id} product={product} />
       ))}
     </StyledProductsList>

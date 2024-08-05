@@ -19,8 +19,8 @@ export const ItemContainer = styled.div`
 
 export const ImageWrapper = styled(Image)`
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 130px;
+  height: 130px;
   object-fit: cover;
   border-radius: 12px;
 `;

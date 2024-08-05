@@ -3,8 +3,8 @@ import { Type } from "class-transformer";
 import { IsEnum, IsOptional, IsInt, Min, Max } from "class-validator";
 
 export enum Order {
-  ASC = "ASC",
-  DESC = "DESC",
+  ASC = "asc",
+  DESC = "desc",
 }
 
 export default class PageOptionsDTO {
