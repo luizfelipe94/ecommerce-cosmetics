@@ -4,12 +4,12 @@ import styled from "styled-components";
 export const DropdownContainer = styled.div`
   position: relative;
   display: inline-block;
-  width: 100%;
+  // width: fit-content;
 `;
 
 export const DropdownButton = styled.button`
-  background-color: #f8f9fa;
-  border: 1px solid #ced4da;
+  background-color: transparent;
+  border: none;
   padding: 10px;
   cursor: pointer;
   border-radius: 4px;
@@ -29,7 +29,7 @@ export const DropdownContent = styled.div<{ open: boolean }>`
   background-color: white;
   border: 1px solid #ced4da;
   border-radius: 4px;
-  width: 100%;
+  // width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1;
 `;

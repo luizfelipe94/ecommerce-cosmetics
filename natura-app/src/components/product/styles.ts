@@ -1,20 +1,25 @@
 "use client";
 
-import Image from "next/image";
 import styled from "styled-components";
 
 export const StyledProduct = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: start;
+  gap: 24px;
 `;
 
-export const ImageWrapper = styled(Image)`
-  display: block;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
+export const ImageWrapper = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+
+  > img {
+   border-radius: 8px;
+  }
 `;
 
 export const ProductRating = styled.div`
@@ -56,4 +61,13 @@ export const DiscountLabel = styled.p`
   font-size: 16px;
   font-weight: bold;
   text-decoration: line-through;
+`;
+
+export const Body = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
 `;

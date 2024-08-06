@@ -14,13 +14,14 @@ export const ContentTitle = styled.div`
   justify-content: center;
   align-items: center;
   padding: 30px;
+  margin-bottom: 30px;  
 `;
 
 export const StyledProductsList = styled.div`
   padding: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 50px;
+  display: grid;  
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
 `;
 
 export const Footer = styled.div``;

@@ -11,7 +11,7 @@ export default function Home() {
       <Banner
         image="/assets/banner.jpg"
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignSelf: "center" }}>
           <h1>Se joga no arraiá</h1>
           <p>aproveite as ofertas com o melhor de maquiagem Natura</p>
           <div>

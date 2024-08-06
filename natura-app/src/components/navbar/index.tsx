@@ -3,7 +3,7 @@
 import { CircleUser, ShoppingCart } from "lucide-react";
 import Input from "../input";
 import { FaSearch } from "react-icons/fa";
-import { Banner, Settings, Content, Menu, Search, SettingMenu } from "./styles";
+import { Banner, Settings, Content, Search, SettingMenu } from "./styles";
 import Link from "next/link";
 import Dropdown, { SelectOption } from "../dropdown";
 import Badge from "../badge";
@@ -27,29 +27,25 @@ export default function Navbar() {
   const { getTotalItems } = useCartStore();
 
   return (
-    <section>
-      <Content>
-        <Banner>
-          <Link href="/">
+    <Content>
+      <Banner>
+        <Link href="/">
             Cosméticos&Co
-          </Link>
-        </Banner>
-        <Menu>
-          <Dropdown placeholder="Products" options={options} />
-        </Menu>
-        <Search>
-          <Input placeholder="O que está buscando hoje?" icon={<FaSearch size={20} />} />
-        </Search>
-        <Settings>
-          <SettingMenu href="/cart">
-            <ShoppingCart size={50}  />
-            <Badge>{getTotalItems()}</Badge>
-          </SettingMenu>
-          <SettingMenu href="#">
-            <CircleUser size={25} strokeWidth={2} />
-          </SettingMenu>
-        </Settings>
-      </Content>
-    </section>
+        </Link>
+        <Dropdown placeholder="Products" options={options} />
+      </Banner>
+      <Search>
+        <Input placeholder="O que está buscando hoje?" icon={<FaSearch size={20} />} />
+      </Search>
+      <Settings>
+        <SettingMenu href="/cart">
+          <ShoppingCart size={24}  />
+          <Badge>{getTotalItems()}</Badge>
+        </SettingMenu>
+        <SettingMenu href="#">
+          <CircleUser size={24} />
+        </SettingMenu>
+      </Settings>
+    </Content>
   );
 }

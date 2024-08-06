@@ -7,32 +7,34 @@ export const Content = styled.div`
   /* background-color: gray; */
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  height: 70px;
+  padding: 0 48px;
+  gap: 24px;
+  height: 74px;
   align-items: center;
-  justify-content: center;
+  // justify-content: space-around;
   width: 100%;
 `;
 
-export const Banner = styled.p`
+export const Banner = styled.div`
+  > a {
   font-size: 1.5rem;
   font-weight: bold;
-  width: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+  }
 
-export const Menu = styled.div`
-  width: 10%;
+  display: inline-flex;
+  flex: 1;
+  gap: 12px;
 `;
 
 export const Search = styled.div`
-  width: 40%;
+  flex: 3;
 `;
 
 export const SettingMenu = styled(Link)`
-  width: 60px;
+  flex:1;
   height: 50px;
   display: flex;
   justify-content: center;
