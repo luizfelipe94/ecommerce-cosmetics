@@ -5,7 +5,7 @@ import { ReadProductDTO } from "@/service/types";
 import Stars from "../stars";
 import Badge from "../badge";
 import Image from "next/image";
-import { calculatePrice } from "@/service/products-service";
+import { calculatePrice } from "@/utils/product-utils";
 
 export type ProductProps = {
   product: ReadProductDTO

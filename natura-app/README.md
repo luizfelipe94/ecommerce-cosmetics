@@ -5,6 +5,7 @@ Ecommerce platform for selling cosmetics and perfumes developed with Next.js 14,
 ## Installation
 ```bash
 git clone https://github.com/luizfelipe94
+cd natura-app
 npm install
 # dev mode
 npm run dev

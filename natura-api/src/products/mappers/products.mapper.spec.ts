@@ -14,6 +14,9 @@ describe("Products Mapper", () => {
       createdAt: new Date("2024-08-05"),
       updatedAt: new Date("2024-08-05"),
       deletedAt: null,
+      category: "PERFUME",
+      discountPercentege: 0,
+      stock: 50,
     };
     const dto = ProductsMapper.toDto(product);
     expect(dto).toEqual({
@@ -25,6 +28,7 @@ describe("Products Mapper", () => {
       price: 20.50,
       createdAt: new Date("2024-08-05"),
       updatedAt: new Date("2024-08-05"),
+      discountPercentege: 0,
     });
   });
 });

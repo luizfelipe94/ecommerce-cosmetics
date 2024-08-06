@@ -1,5 +1,6 @@
-import { calculatePrice } from "@/service/products-service";
+
 import { ReadProductDTO } from "@/service/types";
+import { calculatePrice } from "@/utils/product-utils";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 

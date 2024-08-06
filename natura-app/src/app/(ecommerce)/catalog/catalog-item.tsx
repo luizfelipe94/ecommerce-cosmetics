@@ -4,7 +4,7 @@ import { ReadProductDTO } from "@/service/types";
 import { ImageWrapper, ItemContainer, ItemContent } from "./styles";
 import Button from "@/components/button";
 import { useCartStore } from "@/context/cartStore";
-import { calculatePrice } from "@/service/products-service";
+import { calculatePrice } from "@/utils/product-utils";
 
 export type CatalogItemProps = {
   item: ReadProductDTO;

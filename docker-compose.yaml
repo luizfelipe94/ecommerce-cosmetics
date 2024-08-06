@@ -1,0 +1,57 @@
+services:
+
+  api:
+    build:
+      context: ./natura-api
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/postgres?schema=public"
+      API_PORT: 3000
+    depends_on:
+      - postgres
+    networks:
+      - ecommerce
+
+  app:
+    build:
+      context: ./natura-app
+    ports:
+      - "3005:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: "http://api:3000"
+    networks:
+      - ecommerce
+
+  postgres:
+    image: postgres:14-bullseye
+    container_name: postgres
+    restart: always
+    ports:
+      - 5441:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ecommerce:/var/lib/postgresql/data
+    networks:
+      - ecommerce
+
+  db-seed:
+    build:
+      context: ./natura-api
+    command: sh -c "npm run db:deploy && npm run db:seed"
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/postgres?schema=public"
+    depends_on:
+      - postgres
+      - api
+    networks:
+      - ecommerce
+    restart: "no"
+
+volumes:
+  ecommerce:
+networks:
+  ecommerce:

@@ -5,7 +5,7 @@ export default class AxiosHttpClient implements HttpClient {
 
   private instance: AxiosInstance;
 
-  constructor(baseURL: string) {
+  constructor(baseURL?: string) {
     this.instance = axios.create({
       baseURL,
       timeout: 10000,
