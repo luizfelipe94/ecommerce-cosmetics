@@ -6,6 +6,8 @@ import { FaSearch } from "react-icons/fa";
 import { Banner, Settings, Content, Menu, Search, SettingMenu } from "./styles";
 import Link from "next/link";
 import Dropdown, { SelectOption } from "../dropdown";
+import Badge from "../badge";
+import { useCartStore } from "@/context/cartStore";
 
 const options: SelectOption[] = [
   {
@@ -21,6 +23,9 @@ const options: SelectOption[] = [
 ];
 
 export default function Navbar() {
+
+  const { getTotalItems } = useCartStore();
+
   return (
     <section>
       <Content>
@@ -37,7 +42,8 @@ export default function Navbar() {
         </Search>
         <Settings>
           <SettingMenu href="/cart">
-            <ShoppingCart size={25} strokeWidth={2} />
+            <ShoppingCart size={50}  />
+            <Badge>{getTotalItems()}</Badge>
           </SettingMenu>
           <SettingMenu href="#">
             <CircleUser size={25} strokeWidth={2} />

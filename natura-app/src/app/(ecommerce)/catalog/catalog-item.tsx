@@ -1,12 +1,23 @@
+"use client";
+
 import { ReadProductDTO } from "@/service/types";
 import { ImageWrapper, ItemContainer, ItemContent } from "./styles";
 import Button from "@/components/button";
+import { useCartStore } from "@/context/cartStore";
 
 export type CatalogItemProps = {
   item: ReadProductDTO;
 }
 
 export default function CatalogItem({ item }: CatalogItemProps) {
+
+  const { addItem } = useCartStore();
+
+  const handleAddItem = (item: ReadProductDTO) => {
+    addItem({ product: item,quantity: 1 });
+    alert("Item adicionado ao carrinho"); // TODO: Toasts
+  };
+
   return (
     <ItemContainer>
       <div style={{ display: "flex", flexDirection: "row", gap: "50px", width: "100%" }}>
@@ -19,7 +30,13 @@ export default function CatalogItem({ item }: CatalogItemProps) {
         <ItemContent>
           <div><h3>{item.name}</h3></div>
           <div><h3>R$ {item.price}</h3></div>
-          <Button bgColor="orange" textColor="white">Adicionar</Button>
+          <Button 
+            bgColor="orange" 
+            textColor="white"
+            onClick={() => handleAddItem(item)}
+          >
+            Adicionar
+          </Button>
         </ItemContent>
       </div>
     </ItemContainer>

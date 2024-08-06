@@ -12,7 +12,7 @@ export default function Products() {
   return (
     <StyledProductsList>
       {products && products.data.map((item) => (
-        <CatalogItem key={item.id} item={item} />
+        <CatalogItem key={item.id} item={item}/>
       ))}
     </StyledProductsList>
   );

@@ -4,18 +4,18 @@ import { ListContainer } from "./styles";
 import CartItem from "./cart-item";
 import { Fragment } from "react";
 import { DividerContainer } from "@/components/divider/styles";
-import { ReadProductDTO } from "@/service/types";
+import { CartItem as CartItemStore } from "@/context/cartStore";
 
 export type CartItemProps = {
-  items: ReadProductDTO[];
+  items: CartItemStore[];
 };
 
 export default function CartItems({ items }: CartItemProps) {
   return (
     <ListContainer>
       {items.map((item) => (
-        <Fragment key={item.id}>
-          <CartItem key={item.id} item={item} />
+        <Fragment key={item.product.id}>
+          <CartItem key={item.product.id} item={item} />
           <DividerContainer />
         </Fragment>
       ))}

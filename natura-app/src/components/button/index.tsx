@@ -20,7 +20,8 @@ export default function Button({
   borderColor,
   borderRadius,
   hoverBgColor,
-  hovertextcolor
+  hovertextcolor,
+  ...rest
 }: ButtonProps) {
   return (
     <StyledButton
@@ -30,6 +31,7 @@ export default function Button({
       $borderRadius={borderRadius}
       $hoverBgColor={hoverBgColor}
       $hoverTextColor={hovertextcolor}
+      {...rest}
     >
       {children}
     </StyledButton>

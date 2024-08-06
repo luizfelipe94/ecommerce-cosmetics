@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.button<{
-  $bgColor;
-  $textColor;
-  $borderColor;
-  $borderRadius;
-  $hoverBgColor;
-  $hoverTextColor;
-}>`
+export type StyledButtonProps = {
+  $bgColor: string;
+  $textColor: string;
+  $borderColor: string;
+  $borderRadius: string;
+  $hoverBgColor: string;
+  $hoverTextColor: string;
+};
+
+export const StyledButton = styled.button<StyledButtonProps>`
   background-color: ${({ $bgColor }) => $bgColor || "#ffffff"};
   color: ${({ $textColor }) => $textColor || "#000000"};
   border: 2px solid ${({ $borderColor }) => $borderColor || "#fff"};

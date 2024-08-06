@@ -32,12 +32,14 @@ export const Search = styled.div`
 `;
 
 export const SettingMenu = styled(Link)`
-  width: 40%;
-  display: flex;  
+  width: 60px;
+  height: 50px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  border-radius: 50%;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 10%;
   color: #333;
   cursor: pointer;
   &:hover {
