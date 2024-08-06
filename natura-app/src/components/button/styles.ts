@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export type StyledButtonProps = {
-  $bgColor: string;
-  $textColor: string;
-  $borderColor: string;
-  $borderRadius: string;
-  $hoverBgColor: string;
-  $hoverTextColor: string;
+  $bgColor?: string;
+  $textColor?: string;
+  $borderColor?: string;
+  $borderRadius?: string;
+  $hoverBgColor?: string;
+  $hoverTextColor?: string;
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`

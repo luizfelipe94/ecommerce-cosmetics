@@ -27,12 +27,12 @@ export default function CartSummary() {
           <div><h3>R$ {getTotal().toFixed(2)}</h3></div>
         </SummarySection>
         <SummarySection>
-          <div>Desconto (20%)</div>
-          <div><h3>R$ 123.00</h3></div>
+          <div>Desconto (0%)</div>
+          <div><h3>R$ 0</h3></div>
         </SummarySection>
         <SummarySection>
           <div>Frete</div>
-          <div><h3>R$ 15.00</h3></div>
+          <div><h3>R$ 0</h3></div>
         </SummarySection>
         <Divider />
         <CouponSection>

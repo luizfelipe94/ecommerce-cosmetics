@@ -4,6 +4,7 @@ import { ReadProductDTO } from "@/service/types";
 import { ImageWrapper, ItemContainer, ItemContent } from "./styles";
 import Button from "@/components/button";
 import { useCartStore } from "@/context/cartStore";
+import { calculatePrice } from "@/service/products-service";
 
 export type CatalogItemProps = {
   item: ReadProductDTO;
@@ -29,7 +30,7 @@ export default function CatalogItem({ item }: CatalogItemProps) {
         />
         <ItemContent>
           <div><h3>{item.name}</h3></div>
-          <div><h3>R$ {item.price}</h3></div>
+          <div><h4>R$ {calculatePrice(item.price, item.discountPercentege).toFixed(2)}</h4></div>
           <Button 
             bgColor="orange" 
             textColor="white"

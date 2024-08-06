@@ -29,3 +29,9 @@ export const ImageWrapper = styled(Image)`
   width: 150px;
   height: 150px;
 `;
+
+export const Footer = styled.div`
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+`;

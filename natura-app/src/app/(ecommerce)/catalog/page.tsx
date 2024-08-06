@@ -1,3 +1,5 @@
+"use client";
+
 import Template from "../template";
 import Products from "./products";
 

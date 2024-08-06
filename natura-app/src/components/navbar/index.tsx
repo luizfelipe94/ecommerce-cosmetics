@@ -11,9 +11,9 @@ import { useCartStore } from "@/context/cartStore";
 
 const options: SelectOption[] = [
   {
-    value: "products",
-    label: "Produtos",
-    href: "/catalog?type=products",
+    value: "cosmetics",
+    label: "Cosméticos",
+    href: "/catalog?type=cosmetics",
   },
   {
     value: "perfumes",
@@ -32,7 +32,7 @@ export default function Navbar() {
         <Link href="/">
             Cosméticos&Co
         </Link>
-        <Dropdown placeholder="Products" options={options} />
+        <Dropdown placeholder="Produtos" options={options} />
       </Banner>
       <Search>
         <Input placeholder="O que está buscando hoje?" icon={<FaSearch size={20} />} />

@@ -4,8 +4,18 @@ import Banner from "@/components/banner";
 import Button from "@/components/button";
 import { Container, ContentTitle, Footer } from "./styles";
 import Products from "./products";
+import { useState } from "react";
+import { useProducts } from "@/hooks/useProducts";
 
 export default function Home() {
+
+  const [take, setTake] = useState(4);
+  const { data: products } = useProducts(1, take);
+
+  const handleNextPage = () => {
+    setTake(take+4);
+  };
+
   return (
     <main>
       <Banner
@@ -27,9 +37,16 @@ export default function Home() {
             descubra as fragrâncias que combinam com você
           </h1>
         </ContentTitle>
-        <Products />
+        <Products products={products?.data || []}/>
         <Footer>
-          carregar mais
+          <Button
+            bgColor="white"
+            textColor="black"
+            borderColor="black"
+            onClick={() => handleNextPage()}
+          >
+            Carregar outros
+          </Button>
         </Footer>
       </Container>
     </main>

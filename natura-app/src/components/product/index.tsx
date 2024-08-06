@@ -1,16 +1,15 @@
+"use client";
 
 import { StyledProduct, ImageWrapper, ProcutTitle, RatingLabel, ProductRating, PriceContent, PriceLabel, DiscountContent, DiscountLabel, Body } from "./styles";
 import { ReadProductDTO } from "@/service/types";
 import Stars from "../stars";
 import Badge from "../badge";
 import Image from "next/image";
+import { calculatePrice } from "@/service/products-service";
+
 export type ProductProps = {
   product: ReadProductDTO
 };
-
-function calculatePrice(price: number, discount: number): number {
-  return discount ? price - (price * (discount / 100)) : price;
-}
 
 export default function Product({ product }: ProductProps) {
   return (

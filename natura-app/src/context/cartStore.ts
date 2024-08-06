@@ -1,3 +1,4 @@
+import { calculatePrice } from "@/service/products-service";
 import { ReadProductDTO } from "@/service/types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
@@ -60,7 +61,7 @@ export const useCartStore = create(
         set({ items: updatedCartItems });
       }
     },
-    getTotal: () => get().items.reduce((total, item) => total + item.product.price * item.quantity, 0),
+    getTotal: () => get().items.reduce((total, item) => total + calculatePrice(item.product.price, item.product.discountPercentege) * item.quantity, 0),
     clearCart: () => set({ items: [] }),
     getTotalItems: () => get().items.reduce((qnty, items) => qnty + items.quantity, 0),
   }),

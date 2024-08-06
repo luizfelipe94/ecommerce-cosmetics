@@ -1,18 +1,18 @@
 "use client";
 
 import Product from "@/components/product";
-import { useState } from "react";
 import { StyledProductsList } from "./styles";
-import { useProducts } from "@/hooks/useProducts";
+import { ReadProductDTO } from "@/service/types";
 
-export default function Products() {
+export type ProductsProps = {
+  products: ReadProductDTO[];
+};
 
-  const [page, setPage] = useState(1);
-  const { data: products } = useProducts(page);
+export default function Products({ products }: ProductsProps) {
 
   return (
     <StyledProductsList>
-      {products?.data.map((product) => (
+      {products?.map((product) => (
         <Product key={product.id} product={product} />
       ))}
     </StyledProductsList>

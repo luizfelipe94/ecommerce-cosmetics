@@ -3,7 +3,7 @@
 import React from "react";
 import { StyledButton } from "./styles";
 
-interface ButtonProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface ButtonProps extends React.SelectHTMLAttributes<HTMLButtonElement> {
   bgColor?: string;
   textColor?: string;
   borderColor?: string;

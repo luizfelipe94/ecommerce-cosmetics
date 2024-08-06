@@ -24,4 +24,8 @@ export const StyledProductsList = styled.div`
   gap: 16px;
 `;
 
-export const Footer = styled.div``;
+export const Footer = styled.div`
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+`;
